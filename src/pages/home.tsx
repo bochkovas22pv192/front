@@ -1,8 +1,12 @@
 import React from 'react';
 import '../css/home.css';
 import { Link } from "react-router-dom";
-
+import accContext from "../authContext";
+import CursBaner from '../components/cursBaner';
 function Home() {
+
+
+    const isLogin = React.useContext(accContext);
 return (
     <div>
     {/* <div>
@@ -18,26 +22,18 @@ return (
         </div>
      </div> */}
      <main className="cont">
+     {isLogin?.auth === false && <img className='main-img' src="https://thumbs.dreamstime.com/b/programaci%C3%B3n-codificaci%C3%B3n-de-concepto-plano-54998068.jpg"  alt="main-img" />}       
+     {isLogin?.auth === true && 
+        <section className="curs-list">
+            <CursBaner />
+            <CursBaner />
+            <CursBaner />
+            <CursBaner />
+            <CursBaner />
+            <CursBaner />
             
- 
-     <section className="curs-list">
-        <div className="cur">
-            <Link className='home-curs-link' to="/curs/">
-                <div>
-                    
-                        <img src="https://img.lovepik.com/original_origin_pic/19/01/08/5016ef557fa043da01371d7a86300fa3.png_wh860.png"  alt="curs-img" />
-                    
-                </div>
-                <span>
-                <div className="curs-name">
-                    <h3>Курс по программированию</h3>
-                </div>
-                <h5 className="curs-disc"> Описание курсов по программированию </h5>
-                </span>
-            </Link>
-        </div>
-        
-     </section>
+        </section>
+    }
  </main>
  </div>
 )

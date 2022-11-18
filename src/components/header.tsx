@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import React from 'react';
 import accContext from "../authContext";
 import ExitButton from '../components/exitButton';
+import SideMenuPart from '../components/sideMenuPart';
 
 
 
@@ -17,30 +18,21 @@ function Header() {
                             <button type="button" className="btn-close" data-bs-dismiss="offcanvas"></button>
                         </div>
                         <div className="offcanvas-body">
-                            <div className="side-bar-part">
-                                <Link className="side-bar-link" to="/curs">
-                                        aaaaaaaaaaaaaaaaaaаааааааааа
-                                </Link>
-                            </div>
-                            <div className="side-bar-part">
-                                <Link className="side-bar-link" to="/curs">
-                                    aaaaaaaaaaaaa
-                                </Link>
-                            </div>
-                            <div className="side-bar-part">
-                                <Link className="side-bar-link" to="/curs">
-                                        aaaaaaaaaaaaaaaaaaаааааааааа
-                                </Link>
-                            </div>
-                            <div className="side-bar-part">
-                                <Link className="side-bar-link" to="/curs">
-                                        aaaaaaaaaaaaaaaaaaаааааааааа
-                                </Link>
-                            </div>
-                            <div className="side-bar-part">
-                                <Link className="side-bar-link" to="/curs">
-                                        aaaaaaaaaaaaaaaaaaаааааааааа
-                                </Link>
+                            <div className="offcanvas-body-ch">
+                                <SideMenuPart />
+                                <SideMenuPart />
+                                <SideMenuPart />
+                                <SideMenuPart />
+                                <SideMenuPart />
+                                <SideMenuPart />
+                                <SideMenuPart />
+                                <SideMenuPart />
+                                <SideMenuPart />
+                                <SideMenuPart />
+                                <SideMenuPart />
+                                <SideMenuPart />
+                                <SideMenuPart />
+                                <SideMenuPart />
                             </div>
                         </div>
                     </div>
@@ -67,8 +59,29 @@ function Header() {
                 </div>
                 <nav>
                     <ul>
-                        {isLogin?.auth === true && <li><button  type="button" className="btn btn-outline-secondary">+</button></li>}
-                        
+                        {isLogin?.auth === true && <li><button  type="button" className="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button></li>}
+                        <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div className="modal-dialog">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h5 className="modal-title">Присоединиться к новому курсу</h5>
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                                    </div>
+                                    <div className="modal-body">
+                                        <form>
+                                            <div className="mb-3">
+                                                <label  className="col-form-label">Введите ID курса:</label>
+                                                <input type="text" className="form-control" id="recipient-name"/>
+                                            </div>
+                                            <div className="errors">Курса с таким ID не существует</div>
+                                        </form>
+                                    </div>
+                                    <div className="modal-footer">
+                                        <button type="button" className="btn btn-primary">Присоединиться</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         {isLogin?.auth === false && <Link className="home-link" to="/login"><li> <button type="button"className="btn btn-outline-secondary" >Вход</button></li> </Link>}
                         {isLogin?.auth === true && <li> <ExitButton /> </li> }
                     </ul>

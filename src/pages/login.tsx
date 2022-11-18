@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/login.css';
 import authContext from "../authContext";
-import { useNavigate, NavigateFunction, Link } from "react-router-dom";
+import { useNavigate, NavigateFunction} from "react-router-dom";
 
 function Login() {
 
@@ -15,9 +15,10 @@ function Login() {
     function handleSubmit(event: any) {
         event.preventDefault()
         setPressed(true)
-        aсс_context!.setAuth(true);
+        
         
         if (login !== '' && password !== '') {
+            aсс_context!.setAuth(true);
             navigate('/')
         }
     };
@@ -40,12 +41,12 @@ return (
     <form className="mt-4" >
         <div className="mb-4">
             <div><label>Email</label></div>
-            <div><input type="text" className="w-100" name="email" required v-model="email" onChange={evt => handleLogin(evt)}  /></div>
+            <div><input type="text" className="w-100" name="email" required onChange={evt => handleLogin(evt)}  /></div>
             {(isPressed && login === '') && <div className="errors">Заполните "Логин"</div>}
         </div>
         <div className="mb-4">
             <div><label>Пароль</label></div>
-            <div><input type="text" className="w-100" name="password" required v-model="password"  onChange={evt => handlePassword(evt)} /></div>
+            <div><input type="text" className="w-100" name="password" required onChange={evt => handlePassword(evt)} /></div>
             {(isPressed && password === '') && <div className="errors">Заполните "Пароль"</div>}
         </div>
         <div className="mb-4">

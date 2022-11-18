@@ -7,7 +7,7 @@ return (
         <div className="title-all">
             <img className="curs-logo" src="https://thumbs.dreamstime.com/b/programaci%C3%B3n-codificaci%C3%B3n-de-concepto-plano-54998068.jpg" alt="curs-main-img"  />
             <div className="title">
-                    <h3> Хочешь стать программистом? Да просто программируй </h3>
+                    <h3> Курс по программированию для начинающих </h3>
             </div>
         </div>
        

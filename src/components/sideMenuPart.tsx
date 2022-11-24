@@ -3,11 +3,13 @@ import '../css/sideMenuPart.css';
 import { Link } from "react-router-dom";
 function SideMenuPart() {
 return (
-                                <div className="side-bar-part">
+                                
                                     <Link className="side-bar-link" to="/curs">
-                                            aaaaaaaaaaaaaaaaaaаааааааааа
+                                        <div className="side-bar-part">
+                                            Лекция 1.
+                                        </div>
                                     </Link>
-                                </div>
+                                
 
 )
 }

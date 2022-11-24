@@ -19,20 +19,24 @@ function Header() {
                         </div>
                         <div className="offcanvas-body">
                             <div className="offcanvas-body-ch">
-                                <SideMenuPart />
-                                <SideMenuPart />
-                                <SideMenuPart />
-                                <SideMenuPart />
-                                <SideMenuPart />
-                                <SideMenuPart />
-                                <SideMenuPart />
-                                <SideMenuPart />
-                                <SideMenuPart />
-                                <SideMenuPart />
-                                <SideMenuPart />
-                                <SideMenuPart />
-                                <SideMenuPart />
-                                <SideMenuPart />
+                                {isLogin?.auth === false && <div className="sidemenu-logout-text">Здесь будут ваши курсы</div>}
+                                {isLogin?.auth === true && 
+                                <div>
+                                    <SideMenuPart />
+                                    <SideMenuPart />
+                                    <SideMenuPart />
+                                    <SideMenuPart />
+                                    <SideMenuPart />
+                                    <SideMenuPart />
+                                    <SideMenuPart />
+                                    <SideMenuPart />
+                                    <SideMenuPart />
+                                    <SideMenuPart />
+                                    <SideMenuPart />
+                                    <SideMenuPart />
+                                    <SideMenuPart />
+                                    <SideMenuPart />
+                                    </div>}
                             </div>
                         </div>
                     </div>
